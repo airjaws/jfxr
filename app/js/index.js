@@ -10,6 +10,7 @@ import { localStorage } from './storage.js';
 import { synthFactory } from './synthfactory.js';
 import { customParam, floatParam, booleanParam, waveformButton, linkbox } from './ui.js';
 import { canvasManager, waveshape, drawAmplitude, drawFrequency } from './waveshape.js';
+import { installBridge } from './devstudio-bridge.js';   // devstudio 포팅(R-J25) — 편집 명령 다리 window.__sfx
 
 import '../css/index.scss';
 
@@ -48,6 +49,7 @@ function init() {
 
   angular.element(document).ready(function() {
     angular.bootstrap(document, ['jfxrApp']);
+    installBridge(angular);
   });
 }
 
